@@ -7,7 +7,7 @@
 <div th:replace="common/header :: navbar"></div>
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-bottom: -100px;">
         <div class="col-xs-8">
             <h2 class="section-headline"><span>User Account</span></h2>
         </div>
@@ -15,13 +15,12 @@
             <img th:src="@{/image/logo.png}" src="../static/image/logo.png" class="img-responsive" alt="..."/>
         </div>
     </div>
-    <hr />
-    <img th:src="@{/image/wood.png}" src="../static/image/wood.png" class="img-responsive" alt="..."/>
+    <hr style="position:absolute; width:100%; height:6px; background-color: #333; z-index: -1; margin-top: -80px"/>
+    <img th:src="@{/image/wood.png}" src="../static/image/wood.png" class="img-responsive" alt="..." style="margin-top:-75px;"/>
 
 
 </div> <!-- End of container -->
 
 <div th:replace="common/header :: body-bottom-scripts"></div>
-
 </body>
 </html>

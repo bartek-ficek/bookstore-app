@@ -1,6 +1,11 @@
 package pl.bartekficek.bookstore.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import pl.bartekficek.bookstore.domain.security.UserRole;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -18,6 +23,10 @@ public class User {
     private String email;
     private String phone;
     private boolean enabled=true;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<UserRole> userRoles = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -81,5 +90,13 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }

@@ -3,6 +3,7 @@ package pl.bartekficek.bookstore.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import pl.bartekficek.bookstore.domain.security.Authority;
 import pl.bartekficek.bookstore.domain.security.UserRole;
 
 import javax.persistence.*;
@@ -105,7 +106,9 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur-> authorities.add(new Authority(ur.getRole().getName())));
+        return authorities;
     }
 
     @Override

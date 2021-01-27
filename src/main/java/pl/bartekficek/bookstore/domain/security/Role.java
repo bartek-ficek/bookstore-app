@@ -2,6 +2,7 @@ package pl.bartekficek.bookstore.domain.security;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Role {

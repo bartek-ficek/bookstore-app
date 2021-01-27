@@ -88,9 +88,6 @@ public class User implements UserDetails {
         this.phone = phone;
     }
 
-    public boolean isEnabled() {
-        return enabled;
-    }
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
@@ -113,16 +110,24 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
+        // TODO Auto-generated method stub.
         return false;
     }
 
     @Override
     public boolean isAccountNonLocked() {
+        // TODO Auto-generated method stub.
         return false;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
+        // TODO Auto-generated method stub.
         return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
 }

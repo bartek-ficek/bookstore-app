@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.bartekficek.bookstore.domain.User;
+import pl.bartekficek.bookstore.repository.UserRepository;
 
 @Service
 public class UserSecurityService implements UserDetailsService {

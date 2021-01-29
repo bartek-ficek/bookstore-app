@@ -18,7 +18,7 @@ public class PasswordResetToken {
     private String token;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name="user_id")
+    @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
     private Date expiryDate;
@@ -34,7 +34,7 @@ public class PasswordResetToken {
     private Date calculateExpiryDate(final int expiryTimeInMinutes) {
         final Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(new Date().getTime());
-        cal.add(Calendar.MINUTE,expiryTimeInMinutes);
+        cal.add(Calendar.MINUTE, expiryTimeInMinutes);
         return new Date(cal.getTime().getTime());
     }
 
@@ -89,3 +89,5 @@ public class PasswordResetToken {
                 '}';
     }
 }
+
+//TODO 018 8:15

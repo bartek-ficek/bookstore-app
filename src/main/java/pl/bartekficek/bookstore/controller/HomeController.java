@@ -11,8 +11,9 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/myAccount")
-    public String myAccount() {
+    @RequestMapping("/createAccount")
+    public String createNewAccount(Model model) {
+        model.addAttribute("classActiveNewAccount", true);
         return "myAccount";
     }
 
@@ -21,4 +22,11 @@ public class HomeController {
         model.addAttribute("classActiveLogin", true);
         return "myAccount";
     }
+
+    @RequestMapping("/forgetPassword")
+    public String forgetPassword(Model model) {
+        model.addAttribute("classActiveForgetPassword", true);
+        return "myAccount";
+    }
+
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="common/header :: common-header"><title></title></head>
 
 <body>
@@ -25,8 +25,7 @@
             <!--Nav Tabs-->
             <ul class="nav nav-tabs">
                 <li th:classappend="${classActiveNewAccount}? 'active'"><a href="#tab-1" data-toggle="tab"><span style="color:red">Create New Account</span></a></li>
-                <li th:classappend="${classActiveLogin}? 'active'"><a href="#tab-2" data-toggle="tab"><span
-                        style="color:red">Log In</span></a></li>
+                <li th:classappend="${classActiveLogin}? 'active'"><a href="#tab-2" data-toggle="tab"><span style="color:red">Log In</span></a></li>
                 <li th:classappend="${classActiveForgetPassword}? 'active'"><a href="#tab-3" data-toggle="tab"><span style="color:red">Forget Password</span></a></li>
             </ul>
 

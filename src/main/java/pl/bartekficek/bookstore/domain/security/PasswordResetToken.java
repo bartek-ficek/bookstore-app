@@ -3,6 +3,7 @@ package pl.bartekficek.bookstore.domain.security;
 import pl.bartekficek.bookstore.domain.User;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -23,8 +24,19 @@ public class PasswordResetToken {
     private Date expiryDate;
 
     public PasswordResetToken(final String token, final User user) {
+        super(); // not necessary here. If I will not writ super() here, system will add it automatically
+
         this.token = token;
         this.user = user;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
+
+    private Date calculateExpiryDate(final int expiryTimeInMinutes) {
+        final Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(new Date().getTime());
+        cal.add(Calendar.MINUTE,expiryTimeInMinutes);
+        return new Date(cal.getTime().getTime());
+    }
+
+
 }

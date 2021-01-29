@@ -65,7 +65,10 @@
                 </div>
 
                 <!--log in pane-->
-                <div class="tab-pane fade" id="tab-2">
+
+                <!--question mark below in "${classActiveLogin}?" here check if "classActiveLogin" is true (method login() in HomeController.class).
+                If true under "/login" path wee see open "Log In" panel just in time. There is no need to click on "Log In" button to open this panel.-->
+                <div class="tab-pane fade" id="tab-2" th:classappend="${classActiveLogin}? 'in active'">
                     <div class="panel-group">
                         <div class="panel panel-default" style="border:none">
                             <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">

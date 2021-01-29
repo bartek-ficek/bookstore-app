@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserSecurityService userSecurityService;
 
     private BCryptPasswordEncoder passwordEncoder() {
-        return SecurityUtility.passwordEncoder;
+        return SecurityUtility.passwordEncoder();
     }
 
     private static final String[] PUBLIC_MATCHERS = {

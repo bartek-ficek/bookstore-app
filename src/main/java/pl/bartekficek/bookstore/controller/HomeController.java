@@ -6,6 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
+    @RequestMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("classActiveLogin", true);
+        return "myAccount";
+    }
+
     @RequestMapping("/")
     public String index() {
         return "index";
@@ -14,12 +21,6 @@ public class HomeController {
     @RequestMapping("/createAccount")
     public String createNewAccount(Model model) {
         model.addAttribute("classActiveNewAccount", true);
-        return "myAccount";
-    }
-
-    @RequestMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("classActiveLogin", true);
         return "myAccount";
     }
 

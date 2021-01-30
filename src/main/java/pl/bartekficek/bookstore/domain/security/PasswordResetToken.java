@@ -89,5 +89,3 @@ public class PasswordResetToken {
                 '}';
     }
 }
-
-//TODO 018 8:15

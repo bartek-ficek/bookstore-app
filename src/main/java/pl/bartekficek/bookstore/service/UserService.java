@@ -1,4 +1,4 @@
-package pl.bartekficek.bookstore.service.impl;
+package pl.bartekficek.bookstore.service;
 
 import pl.bartekficek.bookstore.domain.User;
 import pl.bartekficek.bookstore.domain.security.PasswordResetToken;

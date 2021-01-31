@@ -45,7 +45,7 @@
                                     <input type="hidden" name="id" th:value="${user.id}">
 
                                     <div class="bg-info" th:if="${updateUserInfo}">User info updated</div>
-<
+
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-xs-6">
@@ -91,60 +91,6 @@
                                     <p style="color: #828282">To change the current user password, enter the new password in both fields.</p>
 
                                     <button type="submit" class="btn btn-primary">Create new account</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--log in pane-->
-
-                <!--question mark below in "${classActiveLogin}?" here check if "classActiveLogin" is true (method login() in HomeController.class).
-                If true under "/login" path wee see open "Log In" panel just in time. There is no need to click on "Log In" button to open this panel.-->
-                <div class="tab-pane fade" id="tab-2" th:classappend="${classActiveLogin}? 'in active'">
-                    <div class="panel-group">
-                        <div class="panel panel-default" style="border:none">
-                            <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="username">* Username</label>
-                                        <input required="required" type="text" class="form-control" id="username"
-                                               name="username"/>
-                                        <p style="color: #828282">Enter your username here.</p>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password">* Password: </label>
-                                        <input required="required" type="password" class="form-control" id="password"
-                                               name="password"/>
-                                        <p style="color: #828282">Enter your password that accompanies your
-                                            username.</p>
-                                        </p>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary">Log in</button>
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--forget password pane-->
-                <div class="tab-pane fade" id="tab-3" th:classappend="${classActiveForgetPassword}? 'in active'">
-                    <div class="panel-group">
-                        <div class="panel panel-default" style="border:none">
-                            <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recoverEmail">* Your E-mail</label>
-                                        <input required="required" type="text" class="form-control" id="recoverEmail"
-                                               name="email"/>
-                                        <p style="color: #828282">Enter your registered e-mail address here.</p>
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-
                                 </form>
                             </div>
                         </div>

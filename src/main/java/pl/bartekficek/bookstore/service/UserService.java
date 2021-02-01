@@ -2,6 +2,9 @@ package pl.bartekficek.bookstore.service;
 
 import pl.bartekficek.bookstore.domain.User;
 import pl.bartekficek.bookstore.domain.security.PasswordResetToken;
+import pl.bartekficek.bookstore.domain.security.UserRole;
+
+import java.util.Set;
 
 public interface UserService {
 
@@ -12,4 +15,6 @@ public interface UserService {
     User findByUsername(String username);
 
     User findByEmail(String email);
+
+    User createUser(User user, Set<UserRole> userRoles);
 }

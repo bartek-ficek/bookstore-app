@@ -13,7 +13,7 @@ public class PasswordResetToken {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
 
     private String token;
 
@@ -48,11 +48,11 @@ public class PasswordResetToken {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getToken() {
@@ -82,7 +82,7 @@ public class PasswordResetToken {
     @Override
     public String toString() {
         return "PasswordResetToken{" +
-                "Id=" + Id +
+                "Id=" + id +
                 ", token='" + token + '\'' +
                 ", user=" + user +
                 ", expiryDate=" + expiryDate +

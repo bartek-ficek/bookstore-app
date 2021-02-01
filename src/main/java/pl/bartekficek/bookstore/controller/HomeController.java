@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.UUID;
 
 @Controller
 public class HomeController {
@@ -52,7 +53,7 @@ public class HomeController {
     }
 
     @PostMapping(value = "/newUser")
-    public String newUserPost(HttpServletRequest request, @ModelAttribute("email") String userEmail, @ModelAttribute("username") String username, Model model) {
+    public String newUserPost(HttpServletRequest request, @ModelAttribute("email") String userEmail, @ModelAttribute("username") String username, Model model) throws Exception {
         model.addAttribute("classActiveNewAccount", true);
         model.addAttribute("email", userEmail);
         model.addAttribute("username", username);
@@ -83,6 +84,18 @@ public class HomeController {
         userRoles.add(new UserRole(user, role));
         userService.createUser(user, userRoles);
 
+        String token = UUID.randomUUID().toString();
+        userService.createPasswordResetTokenForUser(user, token);
+
+        String appUrl = "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+
+        SimpleMailMessage email = mailConstructor.constructResetTokenEmail(appUrl, request.getLocale(), token, user, password);
+
+        mailSender.send(email);
+
+        model.addAttribute("emailSent", true);
+
+        return "myAccount";
     }
 
     @RequestMapping("/newUser")

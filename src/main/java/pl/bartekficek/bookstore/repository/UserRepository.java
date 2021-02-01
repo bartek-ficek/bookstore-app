@@ -6,5 +6,8 @@ import pl.bartekficek.bookstore.domain.User;
 
 @Repository
 public interface UserRepository extends CrudRepository <User, Long> {
+
     User findByUsername(String username);
+
+    User findByEmail(String email);
 }

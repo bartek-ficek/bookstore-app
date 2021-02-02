@@ -1,6 +1,7 @@
 package pl.bartekficek.bookstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,7 +20,6 @@ import pl.bartekficek.bookstore.service.UserService;
 import pl.bartekficek.bookstore.service.impl.UserSecurityService;
 import pl.bartekficek.bookstore.utility.SecurityUtility;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
 import java.util.Locale;
@@ -28,6 +28,12 @@ import java.util.UUID;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    private JavaMailSender mailSender;
+
+    @Autowired
+    private MailConstructor mailConstructor;
 
     @Autowired
     private UserService userService;

@@ -1,6 +1,7 @@
 package pl.bartekficek.bookstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,6 +19,7 @@ import pl.bartekficek.bookstore.domain.security.Role;
 import pl.bartekficek.bookstore.domain.security.UserRole;
 import pl.bartekficek.bookstore.service.UserService;
 import pl.bartekficek.bookstore.service.impl.UserSecurityService;
+import pl.bartekficek.bookstore.utility.MailConstructor;
 import pl.bartekficek.bookstore.utility.SecurityUtility;
 
 import javax.servlet.http.HttpServletRequest;

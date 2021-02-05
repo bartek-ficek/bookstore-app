@@ -114,7 +114,9 @@
                     <div class="panel-group">
                         <div class="panel panel-default" style="border:none">
                             <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-                                <form>
+                                <div class="alert alert-danger" th:if="${emailNotExist}">Email does't exist.</div>
+                                <div  class="alert alert-success" th:if="${forgetPasswordEmailSent}">Email sent.</div>
+                                <form th:action="@{/forgetPassword}" method="post">
                                     <div class="form-group">
                                         <label for="recoverEmail">* Your E-mail</label>
                                         <input required="required" type="text" class="form-control" id="recoverEmail"

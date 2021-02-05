@@ -9,10 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import pl.bartekficek.bookstore.domain.User;
 import pl.bartekficek.bookstore.domain.security.PasswordResetToken;
 import pl.bartekficek.bookstore.domain.security.Role;
@@ -43,7 +40,7 @@ public class HomeController {
     @Autowired
     private UserSecurityService userSecurityService;
 
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login")
     public String login(Model model) {
         model.addAttribute("classActiveLogin", true);
         return "myAccount";
@@ -121,7 +118,6 @@ public class HomeController {
 
         UserDetails userDetails = userSecurityService.loadUserByUsername(username);
         Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, userDetails.getPassword(), userDetails.getAuthorities());
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         model.addAttribute("user", user);

@@ -67,12 +67,12 @@ public class HomeController {
         model.addAttribute("username", username);
 
         if (userService.findByUsername(username) != null) {
-            model.addAttribute("usernameExist", true);
+            model.addAttribute("usernameExists", true);
             return "myAccount";
         }
 
         if (userService.findByEmail(userEmail) != null) {
-            model.addAttribute("emailExist", true);
+            model.addAttribute("emailExists", true);
             return "myAccount";
         }
 

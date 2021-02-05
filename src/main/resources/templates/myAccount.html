@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="common/header :: common-header"><title></title></head>
 
 <body>
@@ -81,11 +83,10 @@
                     <div class="panel-group">
                         <div class="panel panel-default" style="border:none">
                             <div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-                                <form>
+                                <form th:action="@{/login}" method="post">
                                     <div class="form-group">
                                         <label for="username">* Username</label>
-                                        <input required="required" type="text" class="form-control" id="username"
-                                               name="username"/>
+                                        <input required="required" type="text" class="form-control" id="username" name="username"/>
                                         <p style="color: #828282">Enter your username here.</p>
                                     </div>
 
@@ -98,7 +99,7 @@
                                         </p>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Log in</button>
+                                    <button type="submit" class="btn btn-default">Log in</button>
 
                                 </form>
                             </div>

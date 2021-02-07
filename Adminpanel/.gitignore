@@ -31,9 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-
-Adminpanel/target/
-!Adminpanel/.mvn/wrapper/maven-wrapper.jar
-!Adminpanel/**/src/main/**/target/
-!Adminpanel/**/src/test/**/target/

@@ -1,6 +1,6 @@
-package pl.bartekficek.bookstore.domain.security;
+package pl.bartekficek.adminpanel.domain.security;
 
-import pl.bartekficek.bookstore.domain.User;
+import pl.bartekficek.adminpanel.domain.User;
 
 import javax.persistence.*;
 import java.util.Calendar;

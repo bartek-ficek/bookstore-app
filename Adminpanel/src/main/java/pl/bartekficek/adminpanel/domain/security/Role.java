@@ -1,4 +1,4 @@
-package pl.bartekficek.bookstore.domain.security;
+package pl.bartekficek.adminpanel.domain.security;
 
 import javax.persistence.*;
 import java.util.HashSet;

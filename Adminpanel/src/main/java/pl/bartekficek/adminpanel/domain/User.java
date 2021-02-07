@@ -1,10 +1,10 @@
-package pl.bartekficek.bookstore.domain;
+package pl.bartekficek.adminpanel.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import pl.bartekficek.bookstore.domain.security.Authority;
-import pl.bartekficek.bookstore.domain.security.UserRole;
+import pl.bartekficek.adminpanel.domain.security.Authority;
+import pl.bartekficek.adminpanel.domain.security.UserRole;
 
 import javax.persistence.*;
 import java.util.Collection;

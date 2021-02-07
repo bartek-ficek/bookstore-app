@@ -1,4 +1,4 @@
-package pl.bartekficek.bookstore.domain.security;
+package pl.bartekficek.adminpanel.domain.security;
 
 import org.springframework.security.core.GrantedAuthority;
 

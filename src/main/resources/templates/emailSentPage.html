@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="common/header :: common-header"><title></title></head>
+
+<body>
+<div th:replace="common/header :: navbar"></div>
+
+<div class="container">
+    <h3>An validation email has been sent to <span th:text="${email}"></span></h3>
+</div>
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+</html>

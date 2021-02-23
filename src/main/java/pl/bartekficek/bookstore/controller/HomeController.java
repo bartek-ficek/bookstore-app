@@ -152,4 +152,10 @@ public class HomeController {
         return "myProfile";
     }
 
+    //FIXME
+    @GetMapping(value = "/resetEmail")
+    public String resetEmail(@ModelAttribute("email") String email, Model model) {
+        model.addAttribute("email", email);
+        return "emailSentPage";
+    }
 }

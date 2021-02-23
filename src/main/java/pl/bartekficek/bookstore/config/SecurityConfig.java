@@ -2,6 +2,7 @@ package pl.bartekficek.bookstore.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,6 +19,9 @@ import pl.bartekficek.bookstore.utility.SecurityUtility;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    private Environment env;
+
+    @Autowired
     private UserSecurityService userSecurityService;
 
     private BCryptPasswordEncoder passwordEncoder() {
@@ -25,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private static final String[] PUBLIC_MATCHERS = {
+            "/webjars/**",
             "/css/**",
             "/js/**",
             "/image/**",
@@ -32,9 +37,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/newUser",
             "/forgetPassword",
             "/login",
-            "/fonts/**"
+            "/fonts/**",
+            "/about/**",
+            "/contact/**",
+            "/error/**/*",
+            "/fonts/**",
+            "/signup"
     };
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
